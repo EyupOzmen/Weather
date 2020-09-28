@@ -1,11 +1,12 @@
 import React,{useEffect,useState} from 'react';
 import axios from 'axios';
+import './App.css';
 
 import WeatherData from './components/WeatherData'
 
 const App = ()  => {
-  const [data,setData]=useState([])
-
+  const [weatherData,setWeatherData]=useState([])
+  const [weather,setWeather]=useState({})
   useEffect(() => {
     async function fetchData(){
       const request= await axios({
@@ -16,8 +17,9 @@ const App = ()  => {
 	        "x-rapidapi-key": "8b9936b788msh828d5560ac9d096p1293ecjsn564c7c09cdba"
         }
       })
-      console.log(request.data)
-      setData(request.data)
+      console.log(request.data.data[0])
+      setWeatherData(request.data.data[0])
+      setWeather(request.data.data[0].weather)
       return request.data
     }
     fetchData()
@@ -25,9 +27,13 @@ const App = ()  => {
 
   
   return (
-    <div className="App">
+    <div className="container">
       <WeatherData 
-        city_name={data.city_name}
+        city_name={weatherData.city_name}
+        ob_time={weatherData.ob_time}
+        url={`https://www.weatherbit.io/static/img/icons/${weather.icon}.png`}
+        temp={weatherData.temp}
+        description={weather.description}
       />
     </div>
   );

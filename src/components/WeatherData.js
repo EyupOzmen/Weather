@@ -1,21 +1,24 @@
 import React from 'react';
 
 
-const WeatherData = ({city_name,ob_time,temp,description,icon}) => {
+const WeatherData = ({city_name,ob_time,temp,description,url}) => {
     return(
         <div className="weather-data">
-            <p className="weather_city">"Weather forecast for" <span>{city_name}</span></p>
-            <p className="weather_time">"Date of the Weather: {ob_time}"</p>
+            <div className="weather_header">
+                <p className="weather_city"> <span>{city_name} için Hava Tahmini</span></p>
+                <p className="weather_time">Yayınlanma Tarihi: {ob_time}</p>
+            </div>
+            
             <div className="weather-data_property">
                 
                 <div className="weather_image" >
-                    <img className="image" src={icon} alt="weather-icon" />
+                    <img className="image" src={url} alt="weatherIcon" height={100} width={70} />
                 </div>  
                     
                 <div className="weather_label">  
-                    <p className="weather-data__title">Temperature</p>
+                    <p className="weather-data__title">Sıcaklık</p>
                     <p className="weather-data__value">{temp}</p>
-                    <p className="weather-data__title">Description</p>
+                    <p className="weather-data__title">Açıklama</p>
                     <p className="weather-data__value">{description}</p>
                 </div> 
 
