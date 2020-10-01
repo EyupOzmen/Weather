@@ -1,5 +1,6 @@
 
 @import url("https://fonts.googleapis.com/css?family=Josefin+Sans");
+
 * {
     margin: 0;
     padding: 0;
@@ -8,18 +9,128 @@
 body {
     font-family: "Josefin Sans", cursive;
 }
-
-.container {
+.light-mode{
     margin: 0;
     padding: 0;
     min-width: 350px;
-    background: linear-gradient(100deg, #e0f7fa 50%, #e0f7fa 0);
+    background: linear-gradient(100deg, #ffc1e3 50%, #ffc1e3 0);
     width: 100%;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    color: #373737;
+}
+
+.light-mode nav {
+    transition: background-color 0.25s ease-out;
+}
+  
+.dark-mode {
+    margin: 0;
+    padding: 0;
+    min-width: 350px;
+    background: linear-gradient(100deg, #1a1919 50%, #1a1919 0);
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #fff;
+    
+}
+  
+nav {
+    width: 5%;
+    display: flex;
+    padding: 20px;
+}
+  
+  main {
+    padding: 0.5em;
+    margin: 0 auto;
+    max-width: 600px;
+    font-size: 1.2rem;
+    line-height: 1.1;
+    height: 90vh;
+  }
+  
+  .toggle {
+    position: relative;
+    padding: 0 4px;
+    display: flex;
+    align-items: center;
+  }
+  
+  input[type="checkbox"].checkbox {
+    width: 40px;
+    height: 10px;
+    background: #555;
+    position: relative;
+    border-radius: 5px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    cursor: pointer;
+    vertical-align: 2px;
+    outline: none;
+  }
+  
+  input[type="checkbox"].checkbox:checked + label {
+    left: 30px;
+  }
+  
+  input[type="checkbox"].checkbox:focus-visible {
+    outline: solid 2px white;
+  }
+  
+  input[type="checkbox"].checkbox + label {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: absolute;
+    left: 2px;
+    background: #fff;
+    opacity: 0.9;
+    
+  }
+  
+  .toggle-container {
+    display: flex;
+    margin: 0 auto;
+    width: 50%;
+    justify-content: center;
+    align-items:center;
+  }
+  
+  .toggle-container > span {
+    font-size: 1.2em;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    margin-top: 4px;
+    margin-right: 2px;
+  }
+  
+  .toggle-container > span:last-child {
+    margin-top: 5px;
+  }
+  
+ .map_current{
+    display:inline-flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+}
+ .current_wrapper{
+    flex-direction: row;
 }
 .weekly_wrapper{
     display: flex;
@@ -30,21 +141,28 @@ body {
     margin-bottom: 60px;
 }
 .weather-data {
-    background-color: #b2ebf2;
-    width: 70%;
+    
     width: 350px;
+    width: 40%;
     padding: 30px;
     height: 350px;
     box-sizing: border-box;
     border-radius: 10px;
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+    margin-right: 20px;
+}
+.light-mode .weather-data{
+    background-color: #ef6191;
+}
+.dark-mode .weather-data{
+    background-color: #757575;
 }
 
 .nextday-data{
     justify-content: center;
     align-items: center;
-    margin-left: 5px;
-    background-color: #b2ebf2;
+    margin-left: 35px;
+    background-color: #ef6191;
     width: 72px;
     padding: 10px;
     height: 90px;
@@ -52,6 +170,13 @@ body {
     border-radius: 10px;
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);  
 }
+.light-mode .nextday-data{
+    background-color: #ef6191;
+}
+.dark-mode .nextday-data{
+    background-color: #757575;
+}
+
 .nextday_temp{
     font-size: 14px;
 }
@@ -63,7 +188,7 @@ body {
 }
 
 .weather_city {
-    color: #616161;
+    
     font-weight: bold;
     font-size: 40px;
     margin-bottom: 10px;
@@ -78,19 +203,44 @@ body {
 }
 
 .weather-data_value {
-    color: #616161;
+   
     font-size: 40px;
     justify-content: center;
 }
 
 .weather-data__value {
-    color: #616161;
+    
     font-size: 15px;
     justify-content: center;
 }
 
 .weather_time {
-    color: #616161;
+    
     justify-content: center;
     align-items: center;
+}
+@media screen and (max-width:350){
+    .light-mode{
+        height: 100%;
+        max-width: 375;
+        width: 50%;
+    }
+    .dark-mode{
+        height: 100%;
+        max-width: 375;
+        width: 50%;
+    }
+    .map_current{
+        width: 200px;
+    }
+    .weather-data{
+        width: 10%;
+        width: 50px;
+        padding: 10px;
+        height: 350px;
+        margin-left: 10px;
+    }
+    .weekly_wrapper{
+        width: fit-content;
+    }
 }

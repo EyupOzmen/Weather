@@ -18,8 +18,8 @@ const WeatherData = ({ city_name, ob_time, temp, description, url }) => {
             className="image"
             src={url}
             alt="weatherIcon"
-            height={150}
-            width={170}
+            height={120}
+            width={140}
           />
         </div>
 

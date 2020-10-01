@@ -11,7 +11,7 @@ const NextDay = ({datetime,temperature, url}) => {
             src={url}
             alt="nextDayIcon"
             height={40}
-            width={60}
+            width={40}
           />}
       </div>
     </div>

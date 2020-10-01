@@ -18,6 +18,7 @@ const MapContainer = () => {
       lng: longitude
     }
     setCurrentPosition(currentPosition);
+    setLocation(curentPosition)
   };
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(success);
@@ -32,7 +33,7 @@ const MapContainer = () => {
 
   const mapStyles = {        
     height: "100%",
-    width: "60%",
+    width: 600,
     marginBottom:20,
     marginTop:20
   }
@@ -40,6 +41,7 @@ const MapContainer = () => {
   
   
   return (
+   
      <LoadScript
        googleMapsApiKey='AIzaSyBFECPviev-KAQ3NsfoJjao_dpMID8icFs'>
         <GoogleMap
@@ -57,6 +59,7 @@ const MapContainer = () => {
         }
         </GoogleMap>  
      </LoadScript>
+     
   )
 }
 
