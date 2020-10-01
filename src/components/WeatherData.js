@@ -1,37 +1,37 @@
-import React from 'react';
+import React from "react";
 
+const WeatherData = ({ city_name, ob_time, temp, description, url }) => {
+  return (
+    <div className="weather-data">
+      <div className="weather_header">
+        <p className="weather_city">
+          {" "}
+          <span>{city_name}</span>
+        </p>
+        <p className="weather_time">{ob_time}</p>
+      </div>
 
-const WeatherData = ({city_name,ob_time,temp,description,url}) => {
-    return(
-        <div className="weather-data">
-            <div className="weather_header">
-                <p className="weather_city"> <span>{city_name} için Hava Tahmini</span></p>
-                <p className="weather_time">Yayınlanma Tarihi: {ob_time}</p>
-            </div>
-            
-            <div className="weather-data_property">
-                
-                <div className="weather_image" >
-                    <img className="image" src={url} alt="weatherIcon" height={100} width={70} />
-                </div>  
-                    
-                <div className="weather_label">  
-                    <p className="weather-data__title">Sıcaklık</p>
-                    <p className="weather-data__value">{temp}</p>
-                    <p className="weather-data__title">Açıklama</p>
-                    <p className="weather-data__value">{description}</p>
-                </div> 
-
-            </div>
+      <div className="weather-data_property">
+        <p className="weather-data_value">{Math.round(temp)} &deg;C </p>
+        <div className="weather_image">
+          <img
+            className="image"
+            src={url}
+            alt="weatherIcon"
+            height={150}
+            width={170}
+          />
         </div>
-    )
-}
 
+        <div className="weather_label">
+          <p className="weather-data__value">{description}</p>
+        </div>
+      </div>
+    </div>
+  );
+};
 
-export default WeatherData
-
-
-
+export default WeatherData;
 
 // app_temp: 25.8
 // aqi: 55

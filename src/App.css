@@ -1,43 +1,96 @@
+
+@import url("https://fonts.googleapis.com/css?family=Josefin+Sans");
 * {
     margin: 0;
     padding: 0;
-  }
-  .container {
+}
+
+body {
+    font-family: "Josefin Sans", cursive;
+}
+
+.container {
     margin: 0;
     padding: 0;
     min-width: 350px;
-    background: linear-gradient(100deg, #bdbdbd 50%, #bdbdbd 0);
+    background: linear-gradient(100deg, #e0f7fa 50%, #e0f7fa 0);
     width: 100%;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-  } 
-  .weather-data{
-    
-    background-color: #ff6e40;
+    flex-direction: column;
+}
+.weekly_wrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 60px;
+}
+.weather-data {
+    background-color: #b2ebf2;
     width: 70%;
-    width:350px;
+    width: 350px;
     padding: 30px;
-    height: 300px;
+    height: 350px;
     box-sizing: border-box;
     border-radius: 10px;
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
-    
 }
-.weather_header{
+
+.nextday-data{
     justify-content: center;
     align-items: center;
+    margin-left: 5px;
+    background-color: #b2ebf2;
+    width: 72px;
+    padding: 10px;
+    height: 90px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);  
 }
-.weather_city{
-    color: aliceblue;
-    font-weight:bold;
-    font-size: large;
+.nextday_temp{
+    font-size: 14px;
+}
+.weather_header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.weather_city {
+    color: #616161;
+    font-weight: bold;
+    font-size: 40px;
     margin-bottom: 10px;
 }
-.weather-data_property{
+
+.weather-data_property {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-top: 30px;
+    flex-direction: column;
+}
+
+.weather-data_value {
+    color: #616161;
+    font-size: 40px;
+    justify-content: center;
+}
+
+.weather-data__value {
+    color: #616161;
+    font-size: 15px;
+    justify-content: center;
+}
+
+.weather_time {
+    color: #616161;
+    justify-content: center;
+    align-items: center;
 }
