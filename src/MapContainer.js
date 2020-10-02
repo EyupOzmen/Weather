@@ -33,7 +33,8 @@ const MapContainer = () => {
 
   const mapStyles = {        
     height: "100%",
-    width: 600,
+    width: '70%',
+    width:300,
     marginBottom:20,
     marginTop:20
   }
@@ -42,7 +43,7 @@ const MapContainer = () => {
   
   return (
    
-     <LoadScript
+     <LoadScript 
        googleMapsApiKey='AIzaSyBFECPviev-KAQ3NsfoJjao_dpMID8icFs'>
         <GoogleMap
           mapContainerStyle={mapStyles}

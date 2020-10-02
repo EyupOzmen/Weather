@@ -82,9 +82,11 @@ const App = () => {
       });
       console.log(request.data)
       console.log(request.data.weather[0])
+      if(request){
       setWeatherData(request.data);
       setWeather(request.data.weather[0]);
       setMain(request.data.main);
+      }
       return () => location={cLat:41.015137,
         cLong:28.97953};
     }

@@ -5,10 +5,8 @@ const WeatherData = ({ city_name, ob_time, temp, description, url }) => {
     <div className="weather-data">
       <div className="weather_header">
         <p className="weather_city">
-          {" "}
           <span>{city_name}</span>
         </p>
-        <p className="weather_time">{ob_time}</p>
       </div>
 
       <div className="weather-data_property">
