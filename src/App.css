@@ -192,7 +192,7 @@ nav {
 }
 .weather_header {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     flex-direction: column;
 }
@@ -252,6 +252,8 @@ nav {
         width: 20%;
         height: 30%;
         margin-right: 5px;
+        justify-content: flex-start;
+        align-items: flex-start;
         
     }
     .weekly_wrapper{
@@ -272,12 +274,14 @@ nav {
         margin-bottom: 3px;
         margin-left: 10px;
     }
-   
+    .weather_header{
+        margin-top: -20px;
+    }
     .weather-data_value{
         font-size: 12px;
     }
     .weather-data_property{
-        margin-top: 0;
+        margin-top: -2px;
         flex-direction: column;
         margin-bottom: 10px;
         justify-content: space-between;
